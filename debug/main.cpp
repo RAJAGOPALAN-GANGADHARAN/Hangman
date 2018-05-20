@@ -24,5 +24,6 @@ int main()
         std::cout << std::endl;
     }
 
+    std::cout << "Hello, world!" << std::endl;
     return 0;
 }
