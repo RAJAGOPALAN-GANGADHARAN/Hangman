@@ -1,6 +1,5 @@
 *.[oa]
-*.swp
-*.swo
+.*.sw?
 *~
 prog
 
