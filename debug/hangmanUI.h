@@ -1,6 +1,5 @@
-#ifndef HANGMANILLUSTRATION_H
-#define HANGMANILLUSTRATION_H
-
+#ifndef HANGMANUI_H
+#define HANGMANUI_H
 #include <array>
 
 struct Point{
@@ -8,7 +7,7 @@ struct Point{
     int y;
 };
 
-class HangmanIllustration{
+class HangmanUI{
 
 public:
 
@@ -19,7 +18,7 @@ public:
 
     // Operator overload
     friend std::ostream& operator <<(std::ostream& os,
-                                    const HangmanIllustration& hgMnIlus);
+                                    const HangmanUI& hgMnUI);
 
 private:
     

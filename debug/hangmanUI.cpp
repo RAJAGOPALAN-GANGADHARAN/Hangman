@@ -1,6 +1,6 @@
-#include "hangmanIllustration.h"
+#include "hangmanUI.h"
 
-void HangmanIllustration::addLimb(){
+void HangmanUI::addLimb(){
     switch(limbsAttached){
         case(0):
         case(1):
