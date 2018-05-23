@@ -13,7 +13,7 @@ RandomWord::~RandomWord(){
 // TODO: This method is merely temporary until I can get stuff from online
 void RandomWord::shuffleWordFromPredefinedWords(){
     int ONE_THROUGH_NINE = rand() % 10; 
-    word = predefinedWords[ONE_THROUGH_NINE]; 
+    this->word = predefinedWords[ONE_THROUGH_NINE]; 
 }
 
 void RandomWord::shuffleWord(){
