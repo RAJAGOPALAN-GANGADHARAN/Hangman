@@ -14,7 +14,6 @@ public:
     //TODO: Add as member of Game
     //TODO: Rename these functions
     void addLimb();  // Adds limb to hangman output stream and increments
-    void incrementLimbsAttached();  
 
     // Operator overload
     friend std::ostream& operator <<(std::ostream& os,
@@ -23,7 +22,7 @@ public:
 private:
     
     // Private methods
-    void replaceCharIn2DArray(char ch, Point coord); 
+    void replaceCharOnBoard(char ch, Point coord); 
     
     // Attributes
     unsigned int limbsAttached = 0;
@@ -31,8 +30,9 @@ private:
     const Point HEAD_COORD = {3, 6};
     const char HEAD = 'o';
 
-    const Point BODY_COORD = {4, 6};
-    const char BODY = '|';
+    const Point ROPE_COORD = {2, 6}; 
+    const Point TORSO_COORD = {4, 6};
+    const char TORSO = '|';
 
     const Point LEFT_ARM_COORD = {4, 5};
     const Point RIGHT_ARM_COORD = {4, 7};
@@ -48,7 +48,7 @@ private:
     char board[9][13] = 
     {{' ', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', ' '},
      {' ', '|', '.', '_', '_', '_', '_', '_', '_', '_', '.', '|', ' '},
-     {' ', '|', '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '|', '|', ' '},
+     {' ', '|', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '|', ' '},
      {' ', '|', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '|', ' '},
      {' ', '|', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '|', ' '},
      {' ', '|', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '|', ' '},
