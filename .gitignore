@@ -1,6 +1,8 @@
 *.[oa]
-prog
+*.swp
+*.swo
 *~
+prog
 
 # Temporary
 /release
