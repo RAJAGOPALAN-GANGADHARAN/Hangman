@@ -11,7 +11,7 @@ private:
 
     unsigned int const totalWrongAttempts = 7;
     unsigned int wrongAttempts = 0;
-    RandomWord goal;
+    RandomWord targetPhrase;
     HangmanUI ui;
 };
 

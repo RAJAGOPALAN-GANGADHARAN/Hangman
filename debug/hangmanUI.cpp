@@ -20,7 +20,7 @@ void HangmanUI::addLimb(){
             replaceCharOnBoard(ARM, RIGHT_ARM_COORD);
             return;
         case(5):
-                replaceCharOnBoard(LEFT_LEG, LEFT_LEG_COORD);
+            replaceCharOnBoard(LEFT_LEG, LEFT_LEG_COORD);
             return;
         case(6):
             replaceCharOnBoard(RIGHT_LEG, RIGHT_LEG_COORD);

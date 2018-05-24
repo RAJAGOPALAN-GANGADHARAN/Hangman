@@ -5,7 +5,7 @@ TODO: Get rid of shuffleWordFromPRedefinedWords() and predefinedWords
 #ifndef RANDOMWORD_H
 #define RANDOMWORD_H
 
-#include <array>  //TODO: Nessicary?
+#include <array>              //TODO: Nessicary?
 #include <cstdlib>            // srand(), rand()
 #include <ctime>              // time(NULL)
 
