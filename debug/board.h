@@ -11,6 +11,7 @@ struct Point{
 
 class Board{
 public:
+    void addNextLimb();  // Adds next limb in sequence to board
 
 private:
     void replaceCharOnBoard(char ch, Point coord); 
