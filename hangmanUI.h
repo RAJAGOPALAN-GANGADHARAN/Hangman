@@ -1,15 +1,20 @@
 #ifndef HANGMANUI_H
 #define HANGMANUI_H
-#include <array>
 
-
+#include "board.h"
+#include <iostream>
 
 class HangmanUI{
 
 public:
+    void displayUI();
+
+    friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
 
 private:
-    
-    };
+    Board board;
+    // Letterbox letterBox;
+
+};
 
 #endif
