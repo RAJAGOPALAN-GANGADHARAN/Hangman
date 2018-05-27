@@ -1,12 +1,12 @@
 #include "board.h"
 
 void Board::addNextLimb(){
-    // Perhaps a linked list would be the best way to do this? Until then...
+    //TODO: Find a beetter way to do this
     limbsAttached++;
 
     switch(limbsAttached){
         case(1):
-            replaceCharOnBoard(TORSO, ROPE_COORD);
+            replaceCharOnBoard(ROPE, ROPE_COORD);
             return;
         case(2):
             replaceCharOnBoard(HEAD, HEAD_COORD);

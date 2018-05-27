@@ -23,6 +23,8 @@ private:
     const char HEAD = 'o';
 
     const Point ROPE_COORD = {2, 6}; 
+    const char ROPE = '|';
+
     const Point TORSO_COORD = {4, 6};
     const char TORSO = '|';
 
