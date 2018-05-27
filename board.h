@@ -11,10 +11,11 @@ struct Point{
 
 class Board{
 public:
+    //TODO: Test
     void addNextLimb();  // Adds next limb in sequence to board
 
 private:
-    void replaceCharOnBoard(char ch, Point coord); 
+    void replaceCharOnBoard(const char &ch, const Point &coord);
     
     // Attributes
     unsigned int limbsAttached = 0;

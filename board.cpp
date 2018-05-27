@@ -32,3 +32,7 @@ void Board::addNextLimb(){
     }
 }
 
+void Board::replaceCharOnBoard(const char &ch, const Point &coord){
+    board[coord.x][coord.y] = ch; 
+}
+
