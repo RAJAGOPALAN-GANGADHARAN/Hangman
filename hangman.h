@@ -3,6 +3,7 @@
 
 #include "randomWord.h"
 #include "hangmanUI.h"
+#include <string> 
 
 class Hangman{
 public:
@@ -14,7 +15,7 @@ private:
     unsigned int wrongAttempts = 0;
     bool playerLost = false;
 
-    RandomWord targetPhrase;
+    std::string targetPhrase;
     HangmanUI ui;
 };
 
