@@ -2,7 +2,6 @@
 #define HANGMANUI_H
 
 #include "board.h"
-#include <iostream>
 
 class HangmanUI{
 

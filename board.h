@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include <array>
+#include <iostream>
 
 struct Point{
     int x;
@@ -12,6 +13,8 @@ class Board{
 public:
     //TODO: Test
     void addNextLimb();  // Adds next limb in sequence to board
+
+    friend std::ostream& operator<<(std::ostream &os, const Board &bo);
 
 private:
     void replaceCharOnBoard(const char &ch, const Point &coord);
@@ -39,7 +42,10 @@ private:
     const char RIGHT_LEG = '\\';
 
     // The top left is {0, 0}
-    char board[9][13] = 
+    
+    static const short BOARD_WIDTH = 9;
+    static const short BOARD_HEIGHT = 13;
+    char board[BOARD_WIDTH][BOARD_HEIGHT] = 
     {{' ', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', ' '},
      {' ', '|', '.', '_', '_', '_', '_', '_', '_', '_', '.', '|', ' '},
      {' ', '|', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '|', ' '},

@@ -36,3 +36,13 @@ void Board::replaceCharOnBoard(const char &ch, const Point &coord){
     board[coord.x][coord.y] = ch; 
 }
 
+std::ostream& operator<<(std::ostream &os, const Board &bo){
+    for (short row = 0; row < bo.BOARD_WIDTH; row++){
+        for (short col = 0; col < bo.BOARD_HEIGHT; col++){
+            std::cout << bo.board[row][col];
+        }
+        std::cout << std::endl;
+    }
+    return os;
+}
+
