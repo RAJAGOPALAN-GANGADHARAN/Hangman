@@ -1,7 +1,7 @@
 #include "board.h"
 
 void Board::addNextLimb(){
-    //TODO: Find a beetter way to do this
+    //TODO: Use a linked list
     limbsAttached++;
 
     switch(limbsAttached){
