@@ -2,7 +2,6 @@
 #define BOARD_H
 
 #include <array>
-#include "hangmanUI.h"
 
 struct Point{
     int x;
