@@ -25,7 +25,7 @@ The space between them varies
 void LetterBox::displayLetters(const char* letters,
                                const unsigned int &letterAmount){
     // Each letter takes up 3 cols of space, the letter itself, and a space on both sides
-    unsigned int sizeBetweenBorders = letterAmount* 3;
+    unsigned int sizeBetweenBorders = letterAmount * 3 + 1;
 
     // Upper half
     std::cout << '*' << std::setw(sizeBetweenBorders) << std::setfill('-') 

@@ -7,7 +7,7 @@
 class LetterBox{
 public:
 
-    //TODO: Determine if size works
+    //TODO: Fix determining size 
     void displayLetters(const char* letters);
     void displayLetters(const char* letters, const unsigned int &letterAmount);
 };
