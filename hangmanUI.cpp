@@ -1,6 +1,6 @@
 #include "hangmanUI.h"
 
-void HangmanUI::displayUI(){
+void HangmanUI::display(){
     std::cout << *this;
 }
 
