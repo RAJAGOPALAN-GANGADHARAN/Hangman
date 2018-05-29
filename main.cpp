@@ -1,29 +1,25 @@
 #include <iostream>
 #include "randomWord.h"
+#include "letterBox.h"
+
 
 int main()
 {
-    RandomWord hgmnWord;
-    char board[9][13] = 
-    {{' ', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', ' '},
-     {' ', '|', '.', '_', '_', '_', '_', '_', '_', '_', '.', '|', ' '},
-     {' ', '|', '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '|', '|', ' '},
-     {' ', '|', '|', ' ', ' ', ' ', 'o', ' ', ' ', ' ', '|', '|', ' '},
-     {' ', '|', '|', ' ', ' ', '-', '|', '-', ' ', ' ', '|', '|', ' '},
-     {' ', '|', '|', ' ', ' ', '/', ' ', '\\', ' ', ' ', '|', '|', ' '},
-     {' ', '|', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '|', ' '},
-     {'_', '|', '|', '_', '_', '_', '_', '_', '_', '_', '|', '|', '_'},
-     {' ', '|', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|', '|', ' '}};
 
-    for (int i = 0; i < 9; i++)
-    {
-        for (int j = 0; j < 13; j++)
-        {
-            std::cout << board[i][j];
-        }
-        std::cout << std::endl;
-    }
+    LetterBox box;
+    char someletters[2] = {'1', '2'};
+    box.displayLetters(someletters, 2);
+    std::cout << std::endl;
 
-    std::cout << "Hello, world!" << std::endl;
-    return 0;
+    char aLotOfletters[20] = {'T', 'T',  'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T',};
+    box.displayLetters(aLotOfletters, 20);
+
+    std::cout << std::endl;
+
+    char letters[5] = {'a', 'b', 'c', 'd', 'e'}; 
+    box.displayLetters(letters, 5);
+
+    std::cout << std::endl;
+
+        return 0;
 }
