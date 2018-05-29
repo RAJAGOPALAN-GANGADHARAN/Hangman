@@ -6,7 +6,7 @@
 class HangmanUI{
 
 public:
-    void displayUI();
+    void display();
 
     friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
 
