@@ -15,10 +15,11 @@
 class HangmanUI{
 
 public:
-    //void display();
+    //TODO: void display();
     void displayLetterBox(const char* letters);
     void displayLetterBox(const char* letters, const unsigned int &letterAmount);
 
+    //TODO: Complete this once board and letterbox are fleshed out
     friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
 
 private:

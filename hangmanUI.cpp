@@ -36,6 +36,7 @@ void HangmanUI::displayLetterBox(const char* letters,
               << '*';
 }
 
+//TODO: Complete this once board and letterbox are fleshed out
 std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
     std::cout << ui.board; // << ui.letterBox
     return os;
