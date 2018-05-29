@@ -33,11 +33,12 @@ void LetterBox::displayLetters(const char* letters,
               << '|' << std::setw(sizeBetweenBorders) << std::setfill(' ') 
               << '|' << std::endl
               << '|';
-
     // Letters
     for (unsigned int i = 0; i < letterAmount; i++){
         std::cout << ' ' << letters[i] << ' ';
     }
+
+    std::cout << '|' << std::endl;
 
     // Lower half
     std::cout << '|' << std::setw(sizeBetweenBorders) << std::setfill(' ') 

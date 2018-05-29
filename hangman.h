@@ -7,6 +7,8 @@
 
 class Hangman{
 public:
+    Hangman();
+
     void incrementWrongAttempts();
     const bool& isGameLost();
 
