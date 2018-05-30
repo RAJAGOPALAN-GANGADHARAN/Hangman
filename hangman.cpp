@@ -25,4 +25,14 @@ void Hangman::guessLetter(const char& guessedLetter){
     lettersGuessedIncorrectly.insert(guessedLetter);
 }
 
+bool isCharInSet(const char& ch, const std::set<char>& container){
+    std::set<char>::iterator containerIterator;
+    containerIterator = container.find(ch);
+    return !(containerIterator == container.end());
+}
+
+bool Hangman::hasLetterBeenGuessed(const char& guessedLetter) const {
+    return (isCharInSet(guessedLetter, lettersGuessedCorrectly) &&
+            isCharInSet(guessedLetter, lettersGuessedIncorrectly));
+}
 

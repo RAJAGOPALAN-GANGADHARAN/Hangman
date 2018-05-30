@@ -13,6 +13,7 @@ public:
     
     // Needs testing
     void guessLetter(const char& guessedLetter);
+    bool hasLetterBeenGuessed(const char& guessedLetter) const;
 
     void incrWrongAttempts();
     const bool& isGameLost();
@@ -24,6 +25,8 @@ public:
     void updateUI();
     void displayUI();
 
+    friend bool isCharInSet(const char& ch, const std::set<char>& container);
+
 private:
     unsigned int const TOTAL_WRONG_ATTEMPTS = 7;
     unsigned int wrongAttempts = 0;
@@ -33,6 +36,8 @@ private:
     std::set<char> lettersGuessedIncorrectly;
     std::set<char> lettersGuessedCorrectly;
     HangmanUI ui;
+
+    // Needs testing
 };
 
 #endif
