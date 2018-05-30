@@ -6,8 +6,16 @@
 
 void HangmanUI::displayLetterBox(const std::vector<char> letters){
     unsigned int totalWrongLetters = letters.size();
-    // Each letter takes up 3 cols of space, the letter itself, and a space on both sides
-    unsigned int sizeBetweenBorders = totalWrongLetters * 3 + 1;
+    unsigned int sizeBetweenBorders; 
+
+    if (totalWrongLetters < 3){
+        sizeBetweenBorders = 9;
+    }
+    else{
+    // Each letter takes up 3 cols of space, the letter itself, 
+    // and a space on both sides
+        sizeBetweenBorders = totalWrongLetters * 3 + 1;
+    }
 
     // Upper half
     std::cout << '*' << std::setw(sizeBetweenBorders) << std::setfill('-') 
