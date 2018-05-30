@@ -15,6 +15,7 @@ public:
     void guessLetter(const char& guessedLetter);
     bool hasLetterBeenGuessed(const char& guessedLetter) const;
 
+    //TODO: 
     const bool& isGameLost();
     const bool& isGameWon();
 
@@ -35,8 +36,6 @@ private:
     std::set<char> lettersGuessedIncorrectly;
     std::set<char> lettersGuessedCorrectly;
     HangmanUI ui;
-
-    // Needs testing
 };
 
 #endif
