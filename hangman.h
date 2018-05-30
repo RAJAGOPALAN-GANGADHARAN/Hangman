@@ -16,6 +16,7 @@ private:
     unsigned int const TOTAL_WRONG_ATTEMPTS = 7;
     unsigned int wrongAttempts = 0;
     bool playerLost = false;
+    std::vector<char> incorrectLetters;
 
     std::string targetPhrase;
     HangmanUI ui;
