@@ -15,7 +15,6 @@ public:
     void guessLetter(const char& guessedLetter);
     bool hasLetterBeenGuessed(const char& guessedLetter) const;
 
-    void incrWrongAttempts();
     const bool& isGameLost();
     const bool& isGameWon();
 

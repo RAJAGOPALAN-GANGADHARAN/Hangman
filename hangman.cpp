@@ -11,8 +11,6 @@ Hangman::Hangman(std::string targetPhrase)
 void Hangman::guessLetter(const char& guessedLetter){
     std::set<char>::iterator correctLetterIterator;
 
-    //TODO: Check if letter has already been guessed
-    
     for (correctLetterIterator = allCorrectLetters.begin();
             correctLetterIterator != allCorrectLetters.end();
             correctLetterIterator++){
@@ -23,6 +21,7 @@ void Hangman::guessLetter(const char& guessedLetter){
     }
 
     lettersGuessedIncorrectly.insert(guessedLetter);
+    wrongAttempts++;
 }
 
 bool isCharInSet(const char& ch, const std::set<char>& container){
