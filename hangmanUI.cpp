@@ -4,17 +4,10 @@
     //std::cout << *this;
 //}
 
-void HangmanUI::displayLetterBox(const char* letters){
-    unsigned int size;
-    size = sizeof(letters) / sizeof(letters[0]);
-
-    displayLetterBox(letters, size);
-}
-
-void HangmanUI::displayLetterBox(const char* letters,
-                                 const unsigned int &letterAmount){
+void HangmanUI::displayLetterBox(const std::vector<char> letters){
+    unsigned int totalWrongLetters = letters.size();
     // Each letter takes up 3 cols of space, the letter itself, and a space on both sides
-    unsigned int sizeBetweenBorders = letterAmount * 3 + 1;
+    unsigned int sizeBetweenBorders = totalWrongLetters * 3 + 1;
 
     // Upper half
     std::cout << '*' << std::setw(sizeBetweenBorders) << std::setfill('-') 
@@ -23,7 +16,7 @@ void HangmanUI::displayLetterBox(const char* letters,
               << '|' << std::endl
               << '|';
     // Letters
-    for (unsigned int i = 0; i < letterAmount; i++){
+    for (unsigned int i = 0; i < totalWrongLetters; i++){
         std::cout << ' ' << letters[i] << ' ';
     }
 
