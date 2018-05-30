@@ -6,23 +6,24 @@
 
 void HangmanUI::displayLetterBox(const std::vector<char> letters){
     unsigned int totalWrongLetters = letters.size();
-    unsigned int sizeBetweenBorders; 
+    unsigned int columnsBetweenBorders; 
 
     if (totalWrongLetters < 3){
-        sizeBetweenBorders = 9;
+        columnsBetweenBorders = 9;
     }
     else{
     // Each letter takes up 3 cols of space, the letter itself, 
     // and a space on both sides
-        sizeBetweenBorders = totalWrongLetters * 3 + 1;
+        columnsBetweenBorders = totalWrongLetters * 3 + 1;
     }
 
     // Upper half
-    std::cout << '*' << std::setw(sizeBetweenBorders) << std::setfill('-') 
+    std::cout << '*' << std::setw(columnsBetweenBorders) << std::setfill('-') 
               << '*' << std::endl
-              << '|' << std::setw(sizeBetweenBorders) << std::setfill(' ') 
+              << '|' << std::setw(columnsBetweenBorders) << std::setfill(' ') 
               << '|' << std::endl
               << '|';
+
     // Letters
     for (unsigned int i = 0; i < totalWrongLetters; i++){
         std::cout << ' ' << letters[i] << ' ';
@@ -31,9 +32,9 @@ void HangmanUI::displayLetterBox(const std::vector<char> letters){
     std::cout << '|' << std::endl;
 
     // Lower half
-    std::cout << '|' << std::setw(sizeBetweenBorders) << std::setfill(' ') 
+    std::cout << '|' << std::setw(columnsBetweenBorders) << std::setfill(' ') 
               << '|' << std::endl
-              << '*' << std::setw(sizeBetweenBorders) << std::setfill('-') 
+              << '*' << std::setw(columnsBetweenBorders) << std::setfill('-') 
               << '*';
 }
 
