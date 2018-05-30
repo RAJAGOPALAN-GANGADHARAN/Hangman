@@ -11,14 +11,15 @@ public:
     Hangman();
     Hangman(std::string targetPhrase);
     
-    void guessLetter(const char& letter);
+    // Needs testing
+    void guessLetter(const char& guessedLetter);
 
     void incrWrongAttempts();
     const bool& isGameLost();
     const bool& isGameWon();
 
-    std::set<char>& getIncorrectLetters();
-    std::set<char>& getCorrectLetters();
+    std::set<char>& getLettersGuessedIncorrectly();
+    std::set<char>& getLettersGuessedCorrectly();
 
     void updateUI();
     void displayUI();
@@ -27,6 +28,7 @@ private:
     unsigned int const TOTAL_WRONG_ATTEMPTS = 7;
     unsigned int wrongAttempts = 0;
     std::string targetPhrase;
+    std::set<char> allCorrectLetters;
     //TODO: UI will point to lettersGuessedIncorrectly and lettersGussedCorrectly 
     std::set<char> lettersGuessedIncorrectly;
     std::set<char> lettersGuessedCorrectly;
