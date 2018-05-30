@@ -38,8 +38,15 @@ void HangmanUI::displayLetterBox(const std::vector<char> letters){
               << '*';
 }
 
+void HangmanUI::displayBoard(){
+    std::cout << this->board;
+}
+
+void HangmanUI::setIncorrectLetters(std::vector<char> &incorrectLetters){
+    
+}
+
 //TODO: Complete this once board and letterbox are fleshed out
 std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
-    std::cout << ui.board; // << ui.letterBox
     return os;
 }
