@@ -2,6 +2,7 @@
 .*.sw?
 *~
 prog
+.vscode/*
 
 # Temporary
 /release
