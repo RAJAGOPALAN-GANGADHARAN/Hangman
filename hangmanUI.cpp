@@ -41,8 +41,8 @@ void HangmanUI::displayBoard(){
     std::cout << this->board;
 }
 
-void HangmanUI::setLetters(std::set<char>* letters){
-    
+void HangmanUI::setIncorrectLetters(std::set<char>* incorrectLetters){
+    this->incorrectLetters = incorrectLetters;
 }
 
 //TODO: Complete this once board and letterbox are fleshed out

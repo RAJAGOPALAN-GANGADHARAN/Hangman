@@ -19,7 +19,7 @@ public:
     //TODO: void display();
     void displayLetterBox();
     void displayBoard();
-    void setLetters(std::set<char>* letters);
+    void setIncorrectLetters(std::set<char>* letters);
 
     //TODO: Complete this once board and letterbox are fleshed out
     friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
