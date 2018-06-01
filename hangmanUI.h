@@ -27,7 +27,7 @@ public:
 private:
     void displayLettersInBox(const char DELIM = ' ');
 
-    std::set<char>* letters;
+    std::set<char>* incorrectLetters;
     Board board;
 
 };

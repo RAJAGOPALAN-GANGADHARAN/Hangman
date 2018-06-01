@@ -6,7 +6,7 @@
 
 void HangmanUI::displayLetterBox(){
     
-    unsigned int totalWrongLetters = letters->size();
+    unsigned int totalWrongLetters = incorrectLetters->size();
     unsigned int columnsBetweenBorders; 
 
     // Default box size
@@ -53,8 +53,9 @@ std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
 void HangmanUI::displayLettersInBox(const char DELIM){
     std::set<char>::iterator lettersIterator;
 
-    for (lettersIterator = letters->begin(); lettersIterator != letters->end();
-           lettersIterator++){ 
+    for (lettersIterator = incorrectLetters->begin(); 
+            lettersIterator != incorrectLetters->end();
+            lettersIterator++){ 
         std::cout << DELIM << *lettersIterator << DELIM;
     }
 }
