@@ -27,13 +27,7 @@ void HangmanUI::displayLetterBox(){
 
     // Letters
     // TODO: Size this correctly with default col space
-    std::set<char>::iterator lettersIterator;
-
-    for (lettersIterator = letters->begin(); lettersIterator != letters->end();
-           lettersIterator++){ 
-        std::cout << ' ' << *lettersIterator << ' ';
-    }
-
+    displayLettersInBox(); 
     std::cout << '|' << std::endl;
 
     // Lower half
@@ -54,4 +48,13 @@ void HangmanUI::setLetters(std::set<char>* letters){
 //TODO: Complete this once board and letterbox are fleshed out
 std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
     return os;
+}
+
+void HangmanUI::displayLettersInBox(const char DELIM){
+    std::set<char>::iterator lettersIterator;
+
+    for (lettersIterator = letters->begin(); lettersIterator != letters->end();
+           lettersIterator++){ 
+        std::cout << DELIM << *lettersIterator << DELIM;
+    }
 }

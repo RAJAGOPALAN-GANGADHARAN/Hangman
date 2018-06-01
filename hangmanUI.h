@@ -25,6 +25,8 @@ public:
     friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
 
 private:
+    void displayLettersInBox(const char DELIM = ' ');
+
     std::set<char>* letters;
     Board board;
 
