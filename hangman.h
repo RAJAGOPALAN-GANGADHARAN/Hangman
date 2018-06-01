@@ -19,9 +19,6 @@ public:
     const bool& isGameLost();
     const bool& isGameWon();
 
-    std::set<char>& getLettersGuessedIncorrectly();
-    std::set<char>& getLettersGuessedCorrectly();
-
     void updateUI();
     void displayUI();
 

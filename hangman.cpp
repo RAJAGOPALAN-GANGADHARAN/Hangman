@@ -35,10 +35,10 @@ bool Hangman::hasLetterBeenGuessed(const char& guessedLetter) const {
             isCharInSet(guessedLetter, lettersGuessedIncorrectly));
 }
 
-std::set<char>& Hangman::getLettersGuessedIncorrectly(){
-    return lettersGuessedIncorrectly; 
+std::set<char>* Hangman::getLettersGuessedIncorrectly(){
+    return &lettersGuessedIncorrectly; 
 }
 
-std::set<char>& Hangman::getLettersGuessedCorrectly(){
-    return lettersGuessedCorrectly;
+std::set<char>* Hangman::getLettersGuessedCorrectly(){
+    return &lettersGuessedCorrectly;
 }
