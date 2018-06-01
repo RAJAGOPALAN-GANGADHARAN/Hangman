@@ -4,6 +4,18 @@
     //std::cout << *this;
 //}
 
+void HangmanUI::displayPuzzle(){
+    // For every letter (not whitespace) in targetPhrase
+    // Print a _ for it if it's in correctLetters
+    std::string::iterator targetPhraseIt;
+
+    for (targetPhraseIt = targetPhrase->begin();
+            targetPhraseIt != targetPhrase->end();
+            targetPhraseIt++){
+        if (*targetPhraseIt.isAlpha() 
+    }
+
+}
 void HangmanUI::displayLetterBox(){
     
     unsigned int totalWrongLetters = incorrectLetters->size();

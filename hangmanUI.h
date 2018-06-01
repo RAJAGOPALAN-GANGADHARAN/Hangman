@@ -17,9 +17,10 @@ class HangmanUI{
 
 public:
     //TODO: void display();
+    void displayPuzzle();
     void displayLetterBox();
     void displayBoard();
-    void setIncorrectLetters(std::set<char>* letters);
+    void setIncorrectlyGuessedLetters(std::set<char>* letters);
 
     //TODO: Complete this once board and letterbox are fleshed out
     friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
@@ -27,7 +28,9 @@ public:
 private:
     void displayLettersInBox(const char DELIM = ' ');
 
-    std::set<char>* incorrectLetters;
+    std::string* targetPhrase;
+    std::set<char>* incorrectlyGuessedLetters;
+    std::set<char>* correctlyGuessedLetters;
     Board board;
 
 };
