@@ -17,16 +17,15 @@ class HangmanUI{
 
 public:
     //TODO: void display();
-    void displayLetterBox(const std::set<char>& letters);
+    void displayLetterBox();
     void displayBoard();
-    void setIncorrectLetters(std::set<char>& incorrectLetters);
+    void setLetters(std::set<char>* letters);
 
     //TODO: Complete this once board and letterbox are fleshed out
     friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
 
 private:
-    //TODO: This points to the incorrectLetters from somewhere else
-    std::set<char>* incorrectLetters;
+    std::set<char>* letters;
     Board board;
 
 };

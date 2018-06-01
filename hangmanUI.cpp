@@ -4,14 +4,15 @@
     //std::cout << *this;
 //}
 
-void HangmanUI::displayLetterBox(const std::set<char>& letters){
-    unsigned int totalWrongLetters = letters.size();
+void HangmanUI::displayLetterBox(){
+    
+    unsigned int totalWrongLetters = letters->size();
     unsigned int columnsBetweenBorders; 
 
+    // Default box size
     if (totalWrongLetters < 3){
         columnsBetweenBorders = 9;
-    }
-    else{
+    }else{
     // Each letter takes up 3 cols of space, the letter itself, 
     // and a space on both sides
         columnsBetweenBorders = totalWrongLetters * 3 + 1;
@@ -28,7 +29,7 @@ void HangmanUI::displayLetterBox(const std::set<char>& letters){
     // TODO: Size this correctly with default col space
     std::set<char>::iterator lettersIterator;
 
-    for (lettersIterator = letters.begin(); lettersIterator != letters.end();
+    for (lettersIterator = letters->begin(); lettersIterator != letters->end();
            lettersIterator++){ 
         std::cout << ' ' << *lettersIterator << ' ';
     }
@@ -46,7 +47,7 @@ void HangmanUI::displayBoard(){
     std::cout << this->board;
 }
 
-void HangmanUI::setIncorrectLetters(std::set<char> &incorrectLetters){
+void HangmanUI::setLetters(std::set<char>* letters){
     
 }
 
