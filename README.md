@@ -1,4 +1,4 @@
-#Hangman
+# Hangman
 
 This is a simple Hangman game I've created to test my ability to design a project with my new knowledge of clean code principles (Read from a book named "Clean Code" by Robert C. Martin). 
 I also haven't created a new project in awhile and was itching for something to work on.
