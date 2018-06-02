@@ -1,11 +1,11 @@
 #include <iostream>
-#include "randomWord.h"
-#include "hangmanUI.h"
+#include "hangman.h"
 
 int main()
 {
-
-    HangmanUI ui;
-
+    Hangman game("Cat");
+    
+    game.guessLetter('p');
     return 0;
 }
+

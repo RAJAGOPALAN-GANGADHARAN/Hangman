@@ -2,9 +2,10 @@
 #define HANGMAN_H
 
 #include "randomWord.h"
-#include "hangmanUI.h"
+//#include "hangmanUI.h"  // UI is disabled until working version of game is running
 #include <string> 
 #include <set>
+#include <algorithm>  // std::transform() 
 
 class Hangman{
 public:
@@ -19,20 +20,22 @@ public:
     const bool& isGameLost();
     const bool& isGameWon();
 
-    void updateUI();
-    void displayUI();
+    // Commented out until working version of game is running
+    //void updateUI();
+    //void displayUI();
 
     friend bool isCharInSet(const char& ch, const std::set<char>& container);
 
 private:
-    unsigned int const TOTAL_WRONG_ATTEMPTS = 7;
+    /* TOTAL_WRONG_ATTEMPTS = 7 because Hangman only has 7 limbs to attach,
+    including the rope. */
+    unsigned int const TOTAL_WRONG_ATTEMPTS = 7;  
     unsigned int wrongAttempts = 0;
-    std::string targetPhrase;
-    std::set<char> allCorrectLetters;
-    //TODO: UI will point to lettersGuessedIncorrectly and lettersGussedCorrectly 
-    std::set<char> lettersGuessedIncorrectly;
-    std::set<char> lettersGuessedCorrectly;
-    HangmanUI ui;
+    std::string targetPhrase;                     // Lower case only
+    std::set<char> lettersInTargetPhrase;         // Lower case only
+    std::set<char> lettersGuessedIncorrectly;     // Lower case only
+    std::set<char> lettersGuessedCorrectly;       // Lower case only
+    //HangmanUI ui;
 };
 
 #endif
