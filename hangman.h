@@ -2,19 +2,17 @@
 #define HANGMAN_H
 
 #include "randomWord.h"
-//#include "hangmanUI.h"  // UI is disabled until working version of game is running
-#include <string> 
-#include <set>
-#include <algorithm>  // std::transform 
-#include <locale>  // std::tolower, std::locale
+//#include "hangmanUI.h" // UI is disabled until working version of game is running
+#include <string>        // targetPhrase
+#include <set>           // Primary data structure
+#include <algorithm>     // std::transform 
+#include <locale>        // std::tolower, std::locale
 
 class Hangman{
 public:
     Hangman();
     Hangman(std::string targetPhrase);
     
-    // Needs testing
-    // what if someone guesses ''?
     void guessLetter(char guessedLetter);
     bool hasLetterBeenGuessed(const char& guessedLetter) const;
 
