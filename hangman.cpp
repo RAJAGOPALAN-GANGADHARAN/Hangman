@@ -33,7 +33,6 @@ bool isCharInSet(const char& ch, const std::set<char>& container){
 }   
 
 void Hangman::guessLetter(char guessedLetter){
-
     guessedLetter = std::tolower(guessedLetter, std::locale());
 
     if (hasLetterBeenGuessed(guessedLetter)){
@@ -51,7 +50,7 @@ void Hangman::guessLetter(char guessedLetter){
 }
 
 bool Hangman::hasLetterBeenGuessed(const char& guessedLetter) const {
-    return (isCharInSet(guessedLetter, lettersGuessedCorrectly) &&
+    return (isCharInSet(guessedLetter, lettersGuessedCorrectly) ||
             isCharInSet(guessedLetter, lettersGuessedIncorrectly));
 }
 
