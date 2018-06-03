@@ -36,6 +36,10 @@ void Hangman::guessLetter(char guessedLetter){
 
     guessedLetter = std::tolower(guessedLetter, std::locale());
 
+    if (hasLetterBeenGuessed(guessedLetter)){
+        return;
+    }
+
     std::set<char>::iterator correctLetterIterator;
 
     if (isCharInSet(guessedLetter, lettersInTargetPhrase)){
