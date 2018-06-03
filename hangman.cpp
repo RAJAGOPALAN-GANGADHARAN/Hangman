@@ -1,5 +1,6 @@
 #include "hangman.h"
 
+//TODO: This isn't getting a randomWord
 Hangman::Hangman(){
     RandomWord randomWord;
     Hangman(randomWord.getWord());
@@ -8,8 +9,8 @@ Hangman::Hangman(){
 Hangman::Hangman(std::string targetPhrase)
     : targetPhrase(targetPhrase){
 
-    std::transform(targetPhrase.begin(), targetPhrase.end(), 
-                   targetPhrase.begin(), ::tolower);
+    std::transform(this->targetPhrase.begin(), this->targetPhrase.end(), 
+                   this->targetPhrase.begin(), ::tolower);
     //TODO: Check if targetPhrase is alpha characters only
     
     // Populate std::set<char> lettersInTargetPhrase
@@ -24,29 +25,25 @@ Hangman::Hangman(std::string targetPhrase)
         lettersInTargetPhrase.insert(*currentLetter);
     }
 }
-    
-
-void Hangman::guessLetter(const char& guessedLetter){
-    std::set<char>::iterator correctLetterIterator;
-
-    for (correctLetterIterator = lettersInTargetPhrase.begin();
-            correctLetterIterator != lettersInTargetPhrase.end();
-            correctLetterIterator++){
-        if (guessedLetter == *correctLetterIterator){
-            lettersGuessedCorrectly.insert(guessedLetter);
-            return;
-        }
-    }
-
-    lettersGuessedIncorrectly.insert(guessedLetter);
-    wrongAttempts++;
-}
 
 bool isCharInSet(const char& ch, const std::set<char>& container){
     std::set<char>::iterator containerIterator;
     containerIterator = container.find(ch);
     return !(containerIterator == container.end());
+}   
+
+void Hangman::guessLetter(const char& guessedLetter){
+    std::set<char>::iterator correctLetterIterator;
+
+    if (isCharInSet(guessedLetter, lettersInTargetPhrase)){
+        lettersGuessedCorrectly.insert(guessedLetter);
+    } else {
+        lettersGuessedIncorrectly.insert(guessedLetter);
+        wrongAttempts++;
+    }
 }
+
+
 
 bool Hangman::hasLetterBeenGuessed(const char& guessedLetter) const {
     return (isCharInSet(guessedLetter, lettersGuessedCorrectly) &&

@@ -24,6 +24,8 @@ public:
     //void updateUI();
     //void displayUI();
 
+    // TODO: Unnecissary friend function, but useful for class. Better way
+    // to implement this?
     friend bool isCharInSet(const char& ch, const std::set<char>& container);
 
 private:
