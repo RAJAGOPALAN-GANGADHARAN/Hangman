@@ -13,7 +13,7 @@ Hangman::Hangman(std::string targetPhrase)
                    this->targetPhrase.begin(), ::tolower);
     //TODO: Check if targetPhrase is alpha characters only
     
-    // Populate std::set<char> lettersInTargetPhrase
+    // Populate std::set<char> lettersInTargetPhrase with letters only
     std::string::iterator targetPhraseIT;
     char* currentLetter;
 
@@ -22,7 +22,9 @@ Hangman::Hangman(std::string targetPhrase)
          targetPhraseIT++)
     {
         currentLetter = &*targetPhraseIT;
-        lettersInTargetPhrase.insert(*currentLetter);
+        if (std::isalpha(static_cast<unsigned char>(*currentLetter))){
+            lettersInTargetPhrase.insert(*currentLetter);
+        }
     }
 }
 
