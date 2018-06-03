@@ -5,7 +5,8 @@
 //#include "hangmanUI.h"  // UI is disabled until working version of game is running
 #include <string> 
 #include <set>
-#include <algorithm>  // std::transform() 
+#include <algorithm>  // std::transform 
+#include <locale>  // std::tolower, std::locale
 
 class Hangman{
 public:
@@ -13,12 +14,14 @@ public:
     Hangman(std::string targetPhrase);
     
     // Needs testing
-    void guessLetter(const char& guessedLetter);
+    // what if someone guesses ''?
+    void guessLetter(char guessedLetter);
     bool hasLetterBeenGuessed(const char& guessedLetter) const;
 
     //TODO: 
-    const bool& isGameLost();
-    const bool& isGameWon();
+    bool isGameLost();
+    //Needs testing
+    bool isGameWon();
 
     // Commented out until working version of game is running
     //void updateUI();

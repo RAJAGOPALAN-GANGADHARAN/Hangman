@@ -17,8 +17,8 @@ Hangman::Hangman(std::string targetPhrase)
     std::string::iterator targetPhraseIT;
     char* currentLetter;
 
-    for (targetPhraseIT = targetPhrase.begin();
-         targetPhraseIT != targetPhrase.end();
+    for (targetPhraseIT = this->targetPhrase.begin();
+         targetPhraseIT != this->targetPhrase.end();
          targetPhraseIT++)
     {
         currentLetter = &*targetPhraseIT;
@@ -32,7 +32,10 @@ bool isCharInSet(const char& ch, const std::set<char>& container){
     return !(containerIterator == container.end());
 }   
 
-void Hangman::guessLetter(const char& guessedLetter){
+void Hangman::guessLetter(char guessedLetter){
+
+    guessedLetter = std::tolower(guessedLetter, std::locale());
+
     std::set<char>::iterator correctLetterIterator;
 
     if (isCharInSet(guessedLetter, lettersInTargetPhrase)){
@@ -43,11 +46,17 @@ void Hangman::guessLetter(const char& guessedLetter){
     }
 }
 
-
-
 bool Hangman::hasLetterBeenGuessed(const char& guessedLetter) const {
     return (isCharInSet(guessedLetter, lettersGuessedCorrectly) &&
             isCharInSet(guessedLetter, lettersGuessedIncorrectly));
+}
+
+bool Hangman::isGameLost(){
+    return wrongAttempts >= TOTAL_WRONG_ATTEMPTS;
+}
+
+bool Hangman::isGameWon(){
+    return lettersInTargetPhrase == lettersGuessedCorrectly;
 }
 
 //TODO: Work in progress
