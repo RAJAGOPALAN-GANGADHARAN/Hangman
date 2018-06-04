@@ -27,7 +27,7 @@ Hangman::Hangman(std::string targetPhrase)
         }
     }
 
-    ui.setTargetPhrase(&targetPhrase);
+    ui.setTargetPhrase(targetPhrase);
 }
 
 static bool isCharInSet(const char& ch, const std::set<char>& container){
@@ -68,7 +68,7 @@ bool Hangman::isGameWon(){
 
 //TODO: Work in progress
 void Hangman::updateUI(){
-    ui.setIncorrectlyGuessedLetters(&lettersGuessedIncorrectly);
+    ui.setIncorrectlyGuessedLetters(lettersGuessedIncorrectly);
     //ui.setCorrectlyGuessedLetters(&correctlyGuessedLetters);
     // Add extra hangman limbs if needed
 }
