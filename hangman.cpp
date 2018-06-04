@@ -69,7 +69,7 @@ bool Hangman::isGameWon(){
 //TODO: Work in progress
 void Hangman::updateUI(){
     ui.setIncorrectlyGuessedLetters(lettersGuessedIncorrectly);
-    //ui.setCorrectlyGuessedLetters(&correctlyGuessedLetters);
+    ui.setCorrectlyGuessedLetters(lettersGuessedCorrectly);
     // Add extra hangman limbs if needed
 }
 

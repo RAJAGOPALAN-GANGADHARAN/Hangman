@@ -21,8 +21,9 @@ public:
     void displayLetterBox();
     void displayBoard();
 
-    void setTargetPhrase(std::string const &targetPhrase);
-    void setIncorrectlyGuessedLetters(std::set<char> const &letters);
+    void setTargetPhrase(const std::string &targetPhrase);
+    void setIncorrectlyGuessedLetters(const std::set<char> &letters);
+    void setCorrectlyGuessedLetters(const std::set<char> &letters);
 
     //TODO: Complete this once board and letterbox are fleshed out
 

@@ -73,12 +73,16 @@ void HangmanUI::displayBoard(){
     std::cout << this->board;
 }
 
-void HangmanUI::setIncorrectlyGuessedLetters(const std::set<char> &incorrectLetters){
-    this->incorrectlyGuessedLetters = incorrectLetters;
+void HangmanUI::setIncorrectlyGuessedLetters(const std::set<char> &letters){
+    this->incorrectlyGuessedLetters = letters;
 }
 
 void HangmanUI::setTargetPhrase(const std::string &targetPhrase){
     this->targetPhrase = targetPhrase;
+}
+
+void HangmanUI::setCorrectlyGuessedLetters(const std::set<char> &letters){
+    this->correctlyGuessedLetters = letters;
 }
 
 //TODO: Complete this once board and letterbox are fleshed out
