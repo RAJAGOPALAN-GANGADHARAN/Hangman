@@ -26,6 +26,7 @@ public:
     void setCorrectlyGuessedLetters(const std::set<char> &letters);
 
     //TODO: Complete this once board and letterbox are fleshed out
+    //std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
 
 private:
     void displayLettersInBox(const char DELIM = ' ');
