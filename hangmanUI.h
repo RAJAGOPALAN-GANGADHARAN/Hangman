@@ -21,17 +21,17 @@ public:
     void displayLetterBox();
     void displayBoard();
 
-    void setTargetPhrase(std::string* targetPhrase);
-    void setIncorrectlyGuessedLetters(std::set<char>* letters);
+    void setTargetPhrase(std::string const &targetPhrase);
+    void setIncorrectlyGuessedLetters(std::set<char> const &letters);
 
     //TODO: Complete this once board and letterbox are fleshed out
 
 private:
     void displayLettersInBox(const char DELIM = ' ');
 
-    std::string* targetPhrase;
-    std::set<char>* incorrectlyGuessedLetters;
-    std::set<char>* correctlyGuessedLetters;
+    std::string targetPhrase;
+    std::set<char> incorrectlyGuessedLetters;
+    std::set<char> correctlyGuessedLetters;
     Board board;
 
 };

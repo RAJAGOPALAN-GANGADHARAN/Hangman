@@ -17,13 +17,13 @@ void HangmanUI::displayPuzzle(){
     // Print a _ for it if it's in correctLetters
     std::string::iterator targetPhraseIt;
 
-    for (targetPhraseIt = targetPhrase->begin();
-            targetPhraseIt != targetPhrase->end();
+    for (targetPhraseIt = targetPhrase.begin();
+            targetPhraseIt != targetPhrase.end();
             targetPhraseIt++){
 
         unsigned char currentLetter = *targetPhraseIt;
         if (isalpha(currentLetter)){
-            if (isCharInSet(currentLetter, *correctlyGuessedLetters)){
+            if (isCharInSet(currentLetter, correctlyGuessedLetters)){
                 std::cout << std::toupper(currentLetter);        
             } else {
                 std::cout << '_';
@@ -38,7 +38,7 @@ void HangmanUI::displayPuzzle(){
 
 void HangmanUI::displayLetterBox(){
     
-    unsigned int totalWrongLetters = incorrectlyGuessedLetters->size();
+    unsigned int totalWrongLetters = incorrectlyGuessedLetters.size();
     unsigned int columnsBetweenBorders; 
 
     // Default box size
@@ -73,11 +73,11 @@ void HangmanUI::displayBoard(){
     std::cout << this->board;
 }
 
-void HangmanUI::setIncorrectlyGuessedLetters(std::set<char>* incorrectLetters){
+void HangmanUI::setIncorrectlyGuessedLetters(const std::set<char> &incorrectLetters){
     this->incorrectlyGuessedLetters = incorrectLetters;
 }
 
-void HangmanUI::setTargetPhrase(std::string* targetPhrase){
+void HangmanUI::setTargetPhrase(const std::string &targetPhrase){
     this->targetPhrase = targetPhrase;
 }
 
@@ -89,8 +89,8 @@ std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
 void HangmanUI::displayLettersInBox(const char DELIM){
     std::set<char>::iterator lettersIterator;
 
-    for (lettersIterator = incorrectlyGuessedLetters->begin(); 
-            lettersIterator != incorrectlyGuessedLetters->end();
+    for (lettersIterator = incorrectlyGuessedLetters.begin(); 
+            lettersIterator != incorrectlyGuessedLetters.end();
             lettersIterator++){ 
         std::cout << DELIM << *lettersIterator << DELIM;
     }
