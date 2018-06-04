@@ -3,7 +3,7 @@
 
 int main()
 {
-    Hangman game("zeBrA");
+    Hangman game("stack smash?");
     std::cout << "Welcome to hangman v 0.5!\n";
     
     char userGuess;
@@ -13,6 +13,9 @@ int main()
         std::cin >> userGuess;
 
         game.guessLetter(userGuess);
+
+        game.updateUI();
+        game.displayUI();
         std::cout << "\nUnfortunetly, the game's UI is not up and running at the moment. Therefore, I cannot tell you whether that is correct or not.\n";
     }
 
