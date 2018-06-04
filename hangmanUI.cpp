@@ -73,6 +73,10 @@ void HangmanUI::displayBoard(){
     std::cout << this->board;
 }
 
+void HangmanUI::attachLimb(){
+    board.addNextLimb();
+}
+
 //TODO: Complete this once board and letterbox are fleshed out
 std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
     return os;

@@ -16,10 +16,10 @@
 class HangmanUI{
 
 public:
-    //TODO: void display();
     void displayPuzzle();
     void displayLetterBox();
     void displayBoard();
+    void attachLimb();
 
     void setTargetPhrase(const std::string &targetPhrase);
     void setIncorrectlyGuessedLetters(const std::set<char> &letters);

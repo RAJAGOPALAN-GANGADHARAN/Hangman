@@ -39,6 +39,7 @@ static bool isCharInSet(const char& ch, const std::set<char>& container){
 void Hangman::guessLetter(char guessedLetter){
     guessedLetter = std::tolower(guessedLetter, std::locale());
 
+    //TODO: Perhaps add a warning.
     if (hasLetterBeenGuessed(guessedLetter)){ return; }
 
     std::set<char>::iterator correctLetterIterator;
@@ -48,6 +49,7 @@ void Hangman::guessLetter(char guessedLetter){
     } else {
         lettersGuessedIncorrectly.insert(guessedLetter);
         wrongAttempts++;
+        ui.attachLimb();
     }
 }
 
@@ -68,12 +70,14 @@ bool Hangman::isGameWon(){
 void Hangman::updateUI(){
     ui.setIncorrectlyGuessedLetters(lettersGuessedIncorrectly);
     ui.setCorrectlyGuessedLetters(lettersGuessedCorrectly);
-    // Add extra hangman limbs if needed
 }
 
 void Hangman::displayUI(){
-    //ui.displayBoard();  TODO: Complete
-    //ui.displayLetterBox();  TODO: Complete
-    ui.displayPuzzle();  // TODO: Test
+    ui.displayBoard(); 
+    std::cout << std::endl;
+    ui.displayLetterBox(); //  TODO: Complete
+    std::cout << std::endl;
+    ui.displayPuzzle();  
+    std::cout << std::endl;
 }
 
