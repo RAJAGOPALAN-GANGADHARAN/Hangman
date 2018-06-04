@@ -11,7 +11,6 @@ Hangman::Hangman(std::string targetPhrase)
 
     std::transform(this->targetPhrase.begin(), this->targetPhrase.end(), 
                    this->targetPhrase.begin(), ::tolower);
-    //TODO: Check if targetPhrase is alpha characters only
     
     // Populate std::set<char> lettersInTargetPhrase with letters only
     std::string::iterator targetPhraseIT;

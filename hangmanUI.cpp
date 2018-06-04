@@ -13,8 +13,8 @@ static bool isCharInSet(const char& ch, const std::set<char>& container){
 }
 
 void HangmanUI::displayPuzzle(){
-    // For every letter (not whitespace) in targetPhrase
-    // Print a _ for it if it's in correctLetters
+    // For every letter (not whitespace) in targetPhrase:
+    // Print '_' if it's in correctLetters
     std::string::iterator targetPhraseIt;
 
     for (targetPhraseIt = targetPhrase.begin();
@@ -103,3 +103,4 @@ void HangmanUI::setTargetPhrase(const std::string &targetPhrase){
 void HangmanUI::setCorrectlyGuessedLetters(const std::set<char> &letters){
     this->correctlyGuessedLetters = letters;
 }
+

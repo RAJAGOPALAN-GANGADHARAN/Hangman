@@ -17,17 +17,11 @@ public:
     void guessLetter(char guessedLetter);
     bool hasLetterBeenGuessed(const char& guessedLetter) const;
 
-    //TODO: 
     bool isGameLost();
-    //Needs testing
     bool isGameWon();
 
-    // Commented out until working version of game is running
     void updateUI();
     void displayUI();
-
-    // TODO: Unnecissary friend function, but useful for class. Better way
-    // to implement this?
 
 private:
     /* TOTAL_WRONG_ATTEMPTS = 7 because Hangman only has 7 limbs to attach,
