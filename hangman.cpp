@@ -39,9 +39,7 @@ static bool isCharInSet(const char& ch, const std::set<char>& container){
 void Hangman::guessLetter(char guessedLetter){
     guessedLetter = std::tolower(guessedLetter, std::locale());
 
-    if (hasLetterBeenGuessed(guessedLetter)){
-        return;
-    }
+    if (hasLetterBeenGuessed(guessedLetter)){ return; }
 
     std::set<char>::iterator correctLetterIterator;
 
