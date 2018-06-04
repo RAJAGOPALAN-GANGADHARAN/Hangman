@@ -27,7 +27,7 @@ Hangman::Hangman(std::string targetPhrase)
         }
     }
 
-    ui.setTargetPhrase(targetPhrase);
+    ui.setTargetPhrase(this->targetPhrase);
 }
 
 static bool isCharInSet(const char& ch, const std::set<char>& container){
