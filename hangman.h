@@ -2,7 +2,7 @@
 #define HANGMAN_H
 
 #include "randomWord.h"
-//#include "hangmanUI.h" // UI is disabled until working version of game is running
+#include "hangmanUI.h" 
 #include <string>        // targetPhrase
 #include <set>           // Primary data structure
 #include <algorithm>     // std::transform // Use tolower in cctype instead
@@ -23,12 +23,11 @@ public:
     bool isGameWon();
 
     // Commented out until working version of game is running
-    //void updateUI();
-    //void displayUI();
+    void updateUI();
+    void displayUI();
 
     // TODO: Unnecissary friend function, but useful for class. Better way
     // to implement this?
-    friend bool isCharInSet(const char& ch, const std::set<char>& container);
 
 private:
     /* TOTAL_WRONG_ATTEMPTS = 7 because Hangman only has 7 limbs to attach,
@@ -39,7 +38,7 @@ private:
     std::set<char> lettersInTargetPhrase;         // Lower case alpha only
     std::set<char> lettersGuessedIncorrectly;     // Lower case alpha only
     std::set<char> lettersGuessedCorrectly;       // Lower case alpha only
-    //HangmanUI ui;
+    HangmanUI ui;
 };
 
 #endif

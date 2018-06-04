@@ -26,9 +26,11 @@ Hangman::Hangman(std::string targetPhrase)
             lettersInTargetPhrase.insert(*currentLetter);
         }
     }
+
+    ui.setTargetPhrase(&targetPhrase);
 }
 
-bool isCharInSet(const char& ch, const std::set<char>& container){
+static bool isCharInSet(const char& ch, const std::set<char>& container){
     std::set<char>::iterator containerIterator;
     containerIterator = container.find(ch);
     return !(containerIterator == container.end());
@@ -65,6 +67,15 @@ bool Hangman::isGameWon(){
 }
 
 //TODO: Work in progress
-//void Hangman::updateUI(){
-    //ui.setIncorrectLetters(&lettersGuessedIncorrectly);
-//}
+void Hangman::updateUI(){
+    ui.setIncorrectlyGuessedLetters(&lettersGuessedIncorrectly);
+    //ui.setCorrectlyGuessedLetters(&correctlyGuessedLetters);
+    // Add extra hangman limbs if needed
+}
+
+void Hangman::displayUI(){
+    //ui.displayBoard();  TODO: Complete
+    //ui.displayLetterBox();  TODO: Complete
+    ui.displayPuzzle();  // TODO: Test
+}
+
