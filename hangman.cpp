@@ -50,6 +50,8 @@ void Hangman::guessLetter(char guessedLetter){
         wrongAttempts++;
         ui.attachLimb();
     }
+
+    updateUI();
 }
 
 bool Hangman::hasLetterBeenGuessed(const char& guessedLetter) const {
