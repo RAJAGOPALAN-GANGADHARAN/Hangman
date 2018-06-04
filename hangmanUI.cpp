@@ -24,12 +24,12 @@ void HangmanUI::displayPuzzle(){
         unsigned char currentLetter = *targetPhraseIt;
         if (isalpha(currentLetter)){
             if (isCharInSet(currentLetter, correctlyGuessedLetters)){
-                std::cout << std::toupper(currentLetter);        
+                std::cout << (char)std::toupper(currentLetter);        
             } else {
                 std::cout << '_';
             }
         } else {
-            std::cout << currentLetter;
+            std::cout << (char)currentLetter;
         }
 
     std::cout << ' ';
@@ -73,18 +73,6 @@ void HangmanUI::displayBoard(){
     std::cout << this->board;
 }
 
-void HangmanUI::setIncorrectlyGuessedLetters(const std::set<char> &letters){
-    this->incorrectlyGuessedLetters = letters;
-}
-
-void HangmanUI::setTargetPhrase(const std::string &targetPhrase){
-    this->targetPhrase = targetPhrase;
-}
-
-void HangmanUI::setCorrectlyGuessedLetters(const std::set<char> &letters){
-    this->correctlyGuessedLetters = letters;
-}
-
 //TODO: Complete this once board and letterbox are fleshed out
 std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
     return os;
@@ -98,4 +86,16 @@ void HangmanUI::displayLettersInBox(const char DELIM){
             lettersIterator++){ 
         std::cout << DELIM << *lettersIterator << DELIM;
     }
+}
+
+void HangmanUI::setIncorrectlyGuessedLetters(const std::set<char> &letters){
+    this->incorrectlyGuessedLetters = letters;
+}
+
+void HangmanUI::setTargetPhrase(const std::string &targetPhrase){
+    this->targetPhrase = targetPhrase;
+}
+
+void HangmanUI::setCorrectlyGuessedLetters(const std::set<char> &letters){
+    this->correctlyGuessedLetters = letters;
 }
