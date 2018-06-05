@@ -34,6 +34,7 @@ private:
     std::set<char> lettersGuessedCorrectly;       // Lower case alpha only
     HangmanUI ui;
 
+    void operateOnLetter(const char& letter);
     void filterGuessedLetter(const char& guessedLetter);
 };
 
