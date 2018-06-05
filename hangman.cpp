@@ -13,7 +13,7 @@ Hangman::Hangman(std::string targetPhrase)
                    this->targetPhrase.begin(), ::tolower);
     
     // Populate std::set<char> lettersInTargetPhrase with lower case letters only
-    for (auto currentLetter : targetPhrase)
+    for (char currentLetter : targetPhrase)
     {
         currentLetter = std::tolower(currentLetter);
 

@@ -1,9 +1,5 @@
 #include "hangmanUI.h"
 
-//void HangmanUI::display(){
-    //std::cout << *this;
-//}
-
 // TODO: isCharInSet function was copy pasted from hangman.cpp, find out how to 
 //       make it more dry.
 static bool isCharInSet(const char& ch, const std::set<char>& container){
@@ -15,13 +11,8 @@ static bool isCharInSet(const char& ch, const std::set<char>& container){
 void HangmanUI::displayPuzzle(){
     // For every letter (not whitespace) in targetPhrase:
     // Print '_' if it's in correctLetters
-    std::string::iterator targetPhraseIt;
 
-    for (targetPhraseIt = targetPhrase.begin();
-            targetPhraseIt != targetPhrase.end();
-            targetPhraseIt++){
-
-        unsigned char currentLetter = *targetPhraseIt;
+    for (char currentLetter : targetPhrase){
         if (isalpha(currentLetter)){
             if (isCharInSet(currentLetter, correctlyGuessedLetters)){
                 std::cout << (char)std::toupper(currentLetter);        
@@ -89,10 +80,8 @@ std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
 void HangmanUI::displayLettersInBox(const char DELIM){
     std::set<char>::iterator lettersIterator;
 
-    for (lettersIterator = incorrectlyGuessedLetters.begin(); 
-            lettersIterator != incorrectlyGuessedLetters.end();
-            lettersIterator++){ 
-        std::cout << DELIM << *lettersIterator << DELIM;
+    for (char currentLetter : incorrectlyGuessedLetters){
+        std::cout << DELIM << currentLetter << DELIM;
     }
 }
 
