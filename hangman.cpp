@@ -38,9 +38,16 @@ static bool isCharInSet(const char& ch, const std::set<char>& container){
 void Hangman::guessLetter(char guessedLetter){
     guessedLetter = std::tolower(guessedLetter, std::locale());
 
-    //TODO: Perhaps add a warning.
-    if (hasLetterBeenGuessed(guessedLetter)){ return; }
+    //TODO: Try-catch letters
+    try{ 
+        filterGuessedLetter(guessedLetter);
+    } catch (const char* msg) {
+        // Do something with this
+        // Need to display the error to user
+        return;
+    }
 
+    // Make this its own function
     std::set<char>::iterator correctLetterIterator;
 
     if (isCharInSet(guessedLetter, lettersInTargetPhrase)){
@@ -81,5 +88,15 @@ void Hangman::displayUI(){
     std::cout << std::endl;
     ui.displayPuzzle();  
     std::cout << std::endl;
+}
+
+
+void Hangman::filterGuessedLetter(const char& guessedLetter){
+    if (hasLetterBeenGuessed(guessedLetter)){
+        throw "Letter has been guessed.";  // Can it throw ui.repeatedLetterError()?
+    } 
+    else if (!(isalpha(guessedLetter))){
+        throw "That is not a letter.";
+    }
 }
 
