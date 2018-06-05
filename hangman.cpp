@@ -90,12 +90,10 @@ void Hangman::filterGuessedLetter(const char& guessedLetter){
     }
 }
 
-
 void Hangman::operateOnLetter(const char& letter){
     if (isCharInSet(letter, lettersInTargetPhrase)){
         lettersGuessedCorrectly.insert(letter);
     } else {
-        // Too much going on
         lettersGuessedIncorrectly.insert(letter);
         wrongAttempts++;
         ui.attachLimb();
