@@ -47,17 +47,7 @@ void Hangman::guessLetter(char guessedLetter){
         return;
     }
 
-    // Make this its own function
-    std::set<char>::iterator correctLetterIterator;
-
-    if (isCharInSet(guessedLetter, lettersInTargetPhrase)){
-        lettersGuessedCorrectly.insert(guessedLetter);
-    } else {
-        lettersGuessedIncorrectly.insert(guessedLetter);
-        wrongAttempts++;
-        ui.attachLimb();
-    }
-
+    operateOnLetter(guessedLetter);
     updateUI();
 }
 
@@ -97,6 +87,18 @@ void Hangman::filterGuessedLetter(const char& guessedLetter){
     } 
     else if (!(isalpha(guessedLetter))){
         throw "That is not a letter.";
+    }
+}
+
+
+void Hangman::operateOnLetter(const char& letter){
+    if (isCharInSet(letter, lettersInTargetPhrase)){
+        lettersGuessedCorrectly.insert(letter);
+    } else {
+        // Too much going on
+        lettersGuessedIncorrectly.insert(letter);
+        wrongAttempts++;
+        ui.attachLimb();
     }
 }
 
