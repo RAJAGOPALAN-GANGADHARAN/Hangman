@@ -77,6 +77,10 @@ void HangmanUI::attachLimb(){
     board.addNextLimb();
 }
 
+void HangmanUI::repeatedLetterError(){
+    std::cout << "You've already guessed that letter!\n";
+}
+
 //TODO: Complete this once board and letterbox are fleshed out
 std::ostream& operator<<(std::ostream &os, const HangmanUI &ui){
     return os;

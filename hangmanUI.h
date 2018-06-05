@@ -20,6 +20,7 @@ public:
     void displayLetterBox();
     void displayBoard();
     void attachLimb();
+    static void repeatedLetterError();
 
     void setTargetPhrase(const std::string &targetPhrase);
     void setIncorrectlyGuessedLetters(const std::set<char> &letters);
