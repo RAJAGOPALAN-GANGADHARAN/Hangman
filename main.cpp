@@ -1,25 +1,29 @@
 #include <iostream>
-#include "randomWord.h"
-#include "letterBox.h"
-
+#include "hangman.h"
 
 int main()
 {
+    Hangman game("stack smash?");
+    std::cout << "Welcome to hangman v 0.5!\n";
+    
+    char userGuess;
+    while (!(game.isGameWon() || game.isGameLost())){
+        std::cout << "Guess a letter.\n" 
+                  << ">  ";
+        std::cin >> userGuess;
 
-    LetterBox box;
-    char someletters[2] = {'1', '2'};
-    box.displayLetters(someletters, 2);
-    std::cout << std::endl;
+        game.guessLetter(userGuess);
 
-    char aLotOfletters[20] = {'T', 'T',  'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T',};
-    box.displayLetters(aLotOfletters, 20);
+        game.updateUI();
+        game.displayUI();
+        std::cout << "\nUnfortunetly, the game's UI is not up and running at the moment. Therefore, I cannot tell you whether that is correct or not.\n";
+    }
 
-    std::cout << std::endl;
-
-    char letters[5] = {'a', 'b', 'c', 'd', 'e'}; 
-    box.displayLetters(letters, 5);
-
-    std::cout << std::endl;
-
-        return 0;
+    if (game.isGameWon()){
+        std::cout << "Congratulations, you've won the game!\n";
+    } else {
+        std::cout << "Ouch, you've hung the man. Better luck next time.\n";
+    }
+    return 0;
 }
+

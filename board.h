@@ -11,8 +11,7 @@ struct Point{
 
 class Board{
 public:
-    //TODO: Test
-    void addNextLimb();  // Adds next limb in sequence to board
+    void addNextLimb();  
 
     friend std::ostream& operator<<(std::ostream &os, const Board &bo);
 

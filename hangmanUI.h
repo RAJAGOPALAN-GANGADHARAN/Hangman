@@ -11,22 +11,29 @@
 
 #include "board.h"
 #include <iomanip>
-#include <vector>
+#include <set>
 
 class HangmanUI{
 
 public:
-    //TODO: void display();
-    void displayLetterBox(const std::vector<char> letters);
+    void displayPuzzle();
+    void displayLetterBox();
     void displayBoard();
-    void setIncorrectLetters(std::vector<char> &incorrectLetters);
+    void attachLimb();
+
+    void setTargetPhrase(const std::string &targetPhrase);
+    void setIncorrectlyGuessedLetters(const std::set<char> &letters);
+    void setCorrectlyGuessedLetters(const std::set<char> &letters);
 
     //TODO: Complete this once board and letterbox are fleshed out
-    friend std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
+    //std::ostream& operator<<(std::ostream &os, const HangmanUI &ui);
 
 private:
-    //TODO: This points to the incorrectLetters from somewhere else
-    std::vector<char>* incorrectLetters;
+    void displayLettersInBox(const char DELIM = ' ');
+
+    std::string targetPhrase;
+    std::set<char> incorrectlyGuessedLetters;
+    std::set<char> correctlyGuessedLetters;
     Board board;
 
 };

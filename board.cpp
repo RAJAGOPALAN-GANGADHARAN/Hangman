@@ -26,9 +26,6 @@ void Board::addNextLimb(){
         case(7):
             replaceCharOnBoard(RIGHT_LEG, RIGHT_LEG_COORD);
             return;
-        default:
-            return;
-            // TODO: Throw error
     }
 }
 
