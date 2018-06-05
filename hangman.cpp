@@ -12,17 +12,13 @@ Hangman::Hangman(std::string targetPhrase)
     std::transform(this->targetPhrase.begin(), this->targetPhrase.end(), 
                    this->targetPhrase.begin(), ::tolower);
     
-    // Populate std::set<char> lettersInTargetPhrase with letters only
-    std::string::iterator targetPhraseIT;
-    char* currentLetter;
-
-    for (targetPhraseIT = this->targetPhrase.begin();
-         targetPhraseIT != this->targetPhrase.end();
-         targetPhraseIT++)
+    // Populate std::set<char> lettersInTargetPhrase with lower case letters only
+    for (auto currentLetter : targetPhrase)
     {
-        currentLetter = &*targetPhraseIT;
-        if (std::isalpha(static_cast<unsigned char>(*currentLetter))){
-            lettersInTargetPhrase.insert(*currentLetter);
+        currentLetter = std::tolower(currentLetter);
+
+        if (std::isalpha(static_cast<unsigned char>(currentLetter))){
+            lettersInTargetPhrase.insert(currentLetter);
         }
     }
 
@@ -95,7 +91,7 @@ void Hangman::operateOnLetter(const char& letter){
         lettersGuessedCorrectly.insert(letter);
     } else {
         lettersGuessedIncorrectly.insert(letter);
-        wrongAttempts++;
+        ++wrongAttempts;
         ui.attachLimb();
     }
 }
