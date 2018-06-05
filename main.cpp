@@ -1,22 +1,27 @@
 #include <iostream>
 #include "hangman.h"
 
+void intro();
+void clearScrn();
+
 int main()
 {
-    Hangman game("stack smash?");
-    std::cout << "Welcome to hangman v 0.5!\n";
+    Hangman game;
+    clearScrn();
+    intro();
+    clearScrn();
+    game.displayUI();
     
     char userGuess;
     while (!(game.isGameWon() || game.isGameLost())){
-        std::cout << "Guess a letter.\n" 
+
+        std::cout << "\nGuess a letter.\n" 
                   << ">  ";
         std::cin >> userGuess;
 
         game.guessLetter(userGuess);
-
-        game.updateUI();
+        clearScrn();
         game.displayUI();
-        std::cout << "\nUnfortunetly, the game's UI is not up and running at the moment. Therefore, I cannot tell you whether that is correct or not.\n";
     }
 
     if (game.isGameWon()){
@@ -25,5 +30,16 @@ int main()
         std::cout << "Ouch, you've hung the man. Better luck next time.\n";
     }
     return 0;
+}
+
+void intro(){
+    std::cout << "\t\tWelcome to Hangman!\n"
+              << "\t\tAuthor: Jacob Bickle\n\n"
+              << "\t\tPress any key to contine...\n";
+    std::cin.get();
+}
+
+void clearScrn(){
+    std::cout << std::string(100, '\n');
 }
 

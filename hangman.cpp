@@ -50,6 +50,8 @@ void Hangman::guessLetter(char guessedLetter){
         wrongAttempts++;
         ui.attachLimb();
     }
+
+    updateUI();
 }
 
 bool Hangman::hasLetterBeenGuessed(const char& guessedLetter) const {
@@ -74,6 +76,7 @@ void Hangman::updateUI(){
 void Hangman::displayUI(){
     ui.displayBoard(); 
     std::cout << std::endl;
+    std::cout << "--Incorrect letters--\n";
     ui.displayLetterBox(); //  TODO: Complete
     std::cout << std::endl;
     ui.displayPuzzle();  
