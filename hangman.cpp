@@ -1,19 +1,15 @@
 #include "hangman.h"
-
+#include<iostream>
 //TODO: This isn't getting a randomWord
 Hangman::Hangman(){
     RandomWord randomWord;
-    Hangman(randomWord.getWord());
+    setPhrase(randomWord.getWord());
 }
-
-Hangman::Hangman(std::string targetPhrase)
-    : targetPhrase(targetPhrase){
-
+void Hangman::setPhrase(std::string set)
+{
     std::transform(this->targetPhrase.begin(), this->targetPhrase.end(), 
                    this->targetPhrase.begin(), ::tolower);
-    
-    // Populate std::set<char> lettersInTargetPhrase with lower case letters only
-    for (char currentLetter : targetPhrase)
+    for (char currentLetter : set)
     {
         currentLetter = std::tolower(currentLetter);
 
@@ -21,10 +17,8 @@ Hangman::Hangman(std::string targetPhrase)
             lettersInTargetPhrase.insert(currentLetter);
         }
     }
-
     ui.setTargetPhrase(this->targetPhrase);
 }
-
 static bool isCharInSet(const char& ch, const std::set<char>& container){
     std::set<char>::iterator containerIterator;
     containerIterator = container.find(ch);

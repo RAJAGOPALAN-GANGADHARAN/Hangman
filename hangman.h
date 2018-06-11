@@ -20,6 +20,7 @@ public:
     bool isGameLost();
     bool isGameWon();
 
+    void setPhrase(std::string);
     void updateUI();
     void displayUI();
 
