@@ -14,11 +14,11 @@ int main()
     
     char userGuess;
     while (!(game.isGameWon() || game.isGameLost())){
-
+        do{
         std::cout << "\nGuess a letter.\n" 
                   << ">  ";
         std::cin >> userGuess;
-
+        }while(!isalnum(userGuess));
         game.guessLetter(userGuess);
         clearScrn();
         game.displayUI();
